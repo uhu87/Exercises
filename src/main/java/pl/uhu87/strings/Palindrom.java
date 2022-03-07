@@ -18,11 +18,11 @@ public class Palindrom {
 
         String noSpc = str.replaceAll(" ", "").toLowerCase();
         char[]strArr = noSpc.toCharArray();
-        Boolean isPalindrome = true;
+        boolean isPalindrome=true;
         for (int i = 0; i < strArr.length; i++) {
 
-            if(strArr[i]==strArr[strArr.length-1-i]);
-            else {isPalindrome=false;}
+            if(strArr[i]==strArr[strArr.length-1-i]){isPalindrome=true;}
+            else {isPalindrome=false;break;}
         }
 
         return isPalindrome;
