@@ -46,8 +46,6 @@ public class Rewrite {
             }
 
 
-
-
         } else {
             System.out.println("no such file");
         }
