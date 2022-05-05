@@ -6,36 +6,45 @@ public class BinaryTreeLongestBranchLength {
     public static void main(String[] args) {
 
 
-       int [] numbers = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23};
+       int [] numbers = {1,2,3,4,5, 6};
 
         int branchLength = 0;
-        int currentSideLength = 1;
+        int currentSideArrayLength = 1;
         int power = 0;
 
 
-        while (numbers.length>=currentSideLength) {
+        while (numbers.length>=currentSideArrayLength) {
 
+            //____________________________________for 0 and 1
             if(numbers.length<=1)
             {System.out.println(branchLength);break;}
 
+
+
+
             int lengthCounter = (int)Math.pow(2, power);
 
-            int [] leftSide = new int [currentSideLength+lengthCounter];
-            currentSideLength = leftSide.length;
+            //____________________________________leftSide
+
+            int leftSideLength = currentSideArrayLength+lengthCounter;
+            currentSideArrayLength = leftSideLength;
             branchLength++;
 
-
-            if(numbers.length>currentSideLength)
+            if(numbers.length>currentSideArrayLength)
             {
             } else {System.out.println(branchLength);break;
             }
 
-            int [] rightSide = new int[leftSide.length+lengthCounter];
-            currentSideLength = rightSide.length;
+
+            //____________________________________rightSide
+
+
+            int rightSideLength = leftSideLength+lengthCounter;
+            currentSideArrayLength = rightSideLength;
             branchLength++;
 
 
-            if(numbers.length>currentSideLength)
+            if(numbers.length>currentSideArrayLength)
             {
             } else {System.out.println(branchLength);break;
                 }
