@@ -36,7 +36,7 @@ public class BinaryTreeLongestBranchLength {
             }
 
 
-            //____________________________________rightSide
+            //___________________________________rightSide
 
 
             int rightSideLength = leftSideLength+lengthCounter;
