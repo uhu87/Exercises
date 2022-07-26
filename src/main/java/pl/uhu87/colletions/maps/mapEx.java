@@ -1,4 +1,4 @@
-package pl.uhu87.maps;
+package pl.uhu87.colletions.maps;
 
 import java.util.Arrays;
 import java.util.HashMap;
