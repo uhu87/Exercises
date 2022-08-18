@@ -18,7 +18,7 @@ public class ShoppingCart {
 
         if (checkProductInCartItem(product) == true) {
             CartItem cartItem = findCartItemByProduct(product);
-            cartItem.setQuantity(cartItem.getQuantity()+quantity);
+            cartItem.setQuantity(cartItem.getQuantity() + quantity);
 
 
         } else {
@@ -29,6 +29,35 @@ public class ShoppingCart {
         }
 
     }
+
+
+    public void removeProduct (Product product) {
+        if (checkProductInCartItem(product) == true) {
+            CartItem[] tempCartItems = new CartItem[0];
+            for (int i = 0; i < cartItems.length; i++) {
+                if(!cartItems[i].getProduct().equals(product)){
+
+                    tempCartItems=Arrays.copyOf(cartItems, tempCartItems.length+1);
+                    tempCartItems[tempCartItems.length-1]=cartItems[i];
+
+                }
+            }
+            cartItems=tempCartItems;
+
+
+        } else {
+            System.out.println("no product like this in the shopping cart");
+        }
+
+    }
+
+    public void printReceipt(){
+
+        for (int i = 0; i < cartItems.length; i++) {
+            System.out.println(cartItems[i].getProduct().getName()+cartItems[i].getQuantity());
+        }
+    }
+
 
     public boolean checkProductInCartItem(Product product) {
 
