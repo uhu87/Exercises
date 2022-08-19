@@ -37,7 +37,7 @@ public class ShoppingCart {
             for (int i = 0; i < cartItems.length; i++) {
                 if(!cartItems[i].getProduct().equals(product)){
 
-                    tempCartItems=Arrays.copyOf(cartItems, tempCartItems.length+1);
+                    tempCartItems=Arrays.copyOf(tempCartItems, tempCartItems.length+1);
                     tempCartItems[tempCartItems.length-1]=cartItems[i];
 
                 }
@@ -53,9 +53,29 @@ public class ShoppingCart {
 
     public void printReceipt(){
 
+
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < cartItems.length; i++) {
-            System.out.println(cartItems[i].getProduct().getName()+cartItems[i].getQuantity());
+
+            sb.append(i+1+ ". " + cartItems[i].getProduct().getName() + " x " +
+                    cartItems[i].getProduct().getPrice() + " = " +
+                    cartItems[i].getQuantity()*cartItems[i].getProduct().getPrice()
+            + "\n");
+
         }
+        sb.append("\n"+"TOTAL ___________ "+getTotalPrice());
+
+        System.out.println(sb);
+    }
+
+    public double getTotalPrice () {
+
+        double totalPrice = 0;
+        for (CartItem cI : cartItems
+             ) {
+            totalPrice += cI.getQuantity()*cI.getProduct().getPrice();
+        }
+        return totalPrice;
     }
 
 
@@ -78,9 +98,5 @@ public class ShoppingCart {
         return null;
     }
 
-
-    public CartItem[] getCartItems() {
-        return cartItems;
-    }
 }
 

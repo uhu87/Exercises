@@ -7,23 +7,23 @@ public class main {
     public static void main(String[] args) {
 
 
-        Product product1 = new Product("szynka", 200);
-        Product product2 = new Product("maslo", 100);
-        Product product3 = new Product("cola", 300);
-
+        Product szynka = new Product("szynka", 200);
+        Product maslo = new Product("maslo", 100);
+        Product cola = new Product("cola", 300);
+        Product pierogi = new Product("pierogi", 600);
         ShoppingCart shoppingCart1 = new ShoppingCart();
-        shoppingCart1.addProduct(product1, 2);
-        shoppingCart1.addProduct(product2, 3);
-        shoppingCart1.addProduct(product2, 3);
+        shoppingCart1.addProduct(szynka, 2);
+        shoppingCart1.addProduct(maslo, 3);
+        shoppingCart1.addProduct(cola, 3);
+        shoppingCart1.addProduct(pierogi, 5);
 
 
-        System.out.println(shoppingCart1.getCartItems()[0].getProduct().getName());
-        System.out.println(shoppingCart1.getCartItems()[0].getQuantity());
-        System.out.println(shoppingCart1.getCartItems()[1].getProduct().getName());
-        System.out.println(shoppingCart1.getCartItems()[1].getQuantity());
+        shoppingCart1.removeProduct(szynka);
+        shoppingCart1.removeProduct(pierogi);
+
+        shoppingCart1.printReceipt();
 
 
-       // System.out.println(shoppingCart1.checkProductInCartItem(product1));
-       // System.out.println(shoppingCart1.checkProductInCartItem(product3));
+
     }
 }
