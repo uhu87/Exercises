@@ -5,6 +5,15 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Scanner;
 
+/*
+Napisz metodę public static Map<String, String> getMap(), która utworzy 5 dowolnych zestawów przeciwieństw (np. ciepło - zimno), doda je do mapy, a następnie zwróci.
+        W metodzie main programu, dla każdego klucza mapy, pobieraj z konsoli odpowiedź użytkownika.
+        Program ma zadać 5 pytań.
+        Po udzieleniu ostatniej odpowiedzi - ma wyświetlić wynik w postaci Poprawnych odpowiedzi: 3;
+
+*/
+
+
 public class opposites {
     public static void main(String[] args) {
 
